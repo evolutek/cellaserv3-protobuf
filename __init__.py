@@ -1,7 +1,7 @@
 from .cellaserv_pb2 import (
-        Message,
-        Request,
-        Reply,
-        Subscribe,
-        Publish,
+    Message,
+    Request,
+    Reply,
+    Subscribe,
+    Publish,
 )

@@ -6,471 +6,718 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-
-
 DESCRIPTOR = _descriptor.FileDescriptor(
-  name='cellaserv.proto',
-  package='cellaserv',
-  syntax='proto3',
-  serialized_options=b'Z\035github.com/evolutek/cellaserv',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0f\x63\x65llaserv.proto\x12\tcellaserv\"\x99\x01\n\x07Message\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.cellaserv.Message.MessageType\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"O\n\x0bMessageType\x12\x0c\n\x08Register\x10\x00\x12\x0b\n\x07Request\x10\x01\x12\t\n\x05Reply\x10\x02\x12\r\n\tSubscribe\x10\x03\x12\x0b\n\x07Publish\x10\x04\"0\n\x08Register\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0eidentification\x18\x02 \x01(\t\"i\n\x07Request\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\x12\x1e\n\x16service_identification\x18\x02 \x01(\t\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\x12\n\n\x02id\x18\x63 \x01(\x06\"\x8b\x02\n\x05Reply\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12%\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x16.cellaserv.Reply.Error\x12\n\n\x02id\x18\x63 \x01(\x06\x1a\xc0\x01\n\x05\x45rror\x12)\n\x04type\x18\x01 \x01(\x0e\x32\x1b.cellaserv.Reply.Error.Type\x12\x0c\n\x04what\x18\x02 \x01(\t\"~\n\x04Type\x12\x0b\n\x07NoError\x10\x00\x12\x11\n\rNoSuchService\x10\x01\x12\x19\n\x15InvalidIdentification\x10\x02\x12\x10\n\x0cNoSuchMethod\x10\x03\x12\x10\n\x0c\x42\x61\x64\x41rguments\x10\x04\x12\x0b\n\x07Timeout\x10\x05\x12\n\n\x06\x43ustom\x10~\"\x1a\n\tSubscribe\x12\r\n\x05\x65vent\x18\x01 \x01(\t\"&\n\x07Publish\x12\r\n\x05\x65vent\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x1fZ\x1dgithub.com/evolutek/cellaservb\x06proto3'
+    name="cellaserv.proto",
+    package="cellaserv",
+    syntax="proto3",
+    serialized_options=b"Z\035github.com/evolutek/cellaserv",
+    create_key=_descriptor._internal_create_key,
+    serialized_pb=b'\n\x0f\x63\x65llaserv.proto\x12\tcellaserv"\x99\x01\n\x07Message\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.cellaserv.Message.MessageType\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c"O\n\x0bMessageType\x12\x0c\n\x08Register\x10\x00\x12\x0b\n\x07Request\x10\x01\x12\t\n\x05Reply\x10\x02\x12\r\n\tSubscribe\x10\x03\x12\x0b\n\x07Publish\x10\x04"0\n\x08Register\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0eidentification\x18\x02 \x01(\t"i\n\x07Request\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\x12\x1e\n\x16service_identification\x18\x02 \x01(\t\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\x12\n\n\x02id\x18\x63 \x01(\x06"\x8b\x02\n\x05Reply\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12%\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x16.cellaserv.Reply.Error\x12\n\n\x02id\x18\x63 \x01(\x06\x1a\xc0\x01\n\x05\x45rror\x12)\n\x04type\x18\x01 \x01(\x0e\x32\x1b.cellaserv.Reply.Error.Type\x12\x0c\n\x04what\x18\x02 \x01(\t"~\n\x04Type\x12\x0b\n\x07NoError\x10\x00\x12\x11\n\rNoSuchService\x10\x01\x12\x19\n\x15InvalidIdentification\x10\x02\x12\x10\n\x0cNoSuchMethod\x10\x03\x12\x10\n\x0c\x42\x61\x64\x41rguments\x10\x04\x12\x0b\n\x07Timeout\x10\x05\x12\n\n\x06\x43ustom\x10~"\x1a\n\tSubscribe\x12\r\n\x05\x65vent\x18\x01 \x01(\t"&\n\x07Publish\x12\r\n\x05\x65vent\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x1fZ\x1dgithub.com/evolutek/cellaservb\x06proto3',
 )
 
 
-
 _MESSAGE_MESSAGETYPE = _descriptor.EnumDescriptor(
-  name='MessageType',
-  full_name='cellaserv.Message.MessageType',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='Register', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Request', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Reply', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Subscribe', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Publish', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=105,
-  serialized_end=184,
+    name="MessageType",
+    full_name="cellaserv.Message.MessageType",
+    filename=None,
+    file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
+    values=[
+        _descriptor.EnumValueDescriptor(
+            name="Register",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Request",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Reply",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Subscribe",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Publish",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    containing_type=None,
+    serialized_options=None,
+    serialized_start=105,
+    serialized_end=184,
 )
 _sym_db.RegisterEnumDescriptor(_MESSAGE_MESSAGETYPE)
 
 _REPLY_ERROR_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='cellaserv.Reply.Error.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='NoError', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='NoSuchService', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='InvalidIdentification', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='NoSuchMethod', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BadArguments', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Timeout', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Custom', index=6, number=126,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=485,
-  serialized_end=611,
+    name="Type",
+    full_name="cellaserv.Reply.Error.Type",
+    filename=None,
+    file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
+    values=[
+        _descriptor.EnumValueDescriptor(
+            name="NoError",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="NoSuchService",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="InvalidIdentification",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="NoSuchMethod",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="BadArguments",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Timeout",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.EnumValueDescriptor(
+            name="Custom",
+            index=6,
+            number=126,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    containing_type=None,
+    serialized_options=None,
+    serialized_start=485,
+    serialized_end=611,
 )
 _sym_db.RegisterEnumDescriptor(_REPLY_ERROR_TYPE)
 
 
 _MESSAGE = _descriptor.Descriptor(
-  name='Message',
-  full_name='cellaserv.Message',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='cellaserv.Message.type', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='content', full_name='cellaserv.Message.content', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _MESSAGE_MESSAGETYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=31,
-  serialized_end=184,
+    name="Message",
+    full_name="cellaserv.Message",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="type",
+            full_name="cellaserv.Message.type",
+            index=0,
+            number=1,
+            type=14,
+            cpp_type=8,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="content",
+            full_name="cellaserv.Message.content",
+            index=1,
+            number=2,
+            type=12,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"",
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[
+        _MESSAGE_MESSAGETYPE,
+    ],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=31,
+    serialized_end=184,
 )
 
 
 _REGISTER = _descriptor.Descriptor(
-  name='Register',
-  full_name='cellaserv.Register',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='cellaserv.Register.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='identification', full_name='cellaserv.Register.identification', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=186,
-  serialized_end=234,
+    name="Register",
+    full_name="cellaserv.Register",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="name",
+            full_name="cellaserv.Register.name",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="identification",
+            full_name="cellaserv.Register.identification",
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=186,
+    serialized_end=234,
 )
 
 
 _REQUEST = _descriptor.Descriptor(
-  name='Request',
-  full_name='cellaserv.Request',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='service_name', full_name='cellaserv.Request.service_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='service_identification', full_name='cellaserv.Request.service_identification', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='method', full_name='cellaserv.Request.method', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='cellaserv.Request.data', index=3,
-      number=4, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='cellaserv.Request.id', index=4,
-      number=99, type=6, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=236,
-  serialized_end=341,
+    name="Request",
+    full_name="cellaserv.Request",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="service_name",
+            full_name="cellaserv.Request.service_name",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="service_identification",
+            full_name="cellaserv.Request.service_identification",
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="method",
+            full_name="cellaserv.Request.method",
+            index=2,
+            number=3,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="data",
+            full_name="cellaserv.Request.data",
+            index=3,
+            number=4,
+            type=12,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"",
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="id",
+            full_name="cellaserv.Request.id",
+            index=4,
+            number=99,
+            type=6,
+            cpp_type=4,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=236,
+    serialized_end=341,
 )
 
 
 _REPLY_ERROR = _descriptor.Descriptor(
-  name='Error',
-  full_name='cellaserv.Reply.Error',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='cellaserv.Reply.Error.type', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='what', full_name='cellaserv.Reply.Error.what', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _REPLY_ERROR_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=419,
-  serialized_end=611,
+    name="Error",
+    full_name="cellaserv.Reply.Error",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="type",
+            full_name="cellaserv.Reply.Error.type",
+            index=0,
+            number=1,
+            type=14,
+            cpp_type=8,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="what",
+            full_name="cellaserv.Reply.Error.what",
+            index=1,
+            number=2,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[
+        _REPLY_ERROR_TYPE,
+    ],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=419,
+    serialized_end=611,
 )
 
 _REPLY = _descriptor.Descriptor(
-  name='Reply',
-  full_name='cellaserv.Reply',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='data', full_name='cellaserv.Reply.data', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='cellaserv.Reply.error', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='cellaserv.Reply.id', index=2,
-      number=99, type=6, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_REPLY_ERROR, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=344,
-  serialized_end=611,
+    name="Reply",
+    full_name="cellaserv.Reply",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="data",
+            full_name="cellaserv.Reply.data",
+            index=0,
+            number=1,
+            type=12,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"",
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="error",
+            full_name="cellaserv.Reply.error",
+            index=1,
+            number=2,
+            type=11,
+            cpp_type=10,
+            label=1,
+            has_default_value=False,
+            default_value=None,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="id",
+            full_name="cellaserv.Reply.id",
+            index=2,
+            number=99,
+            type=6,
+            cpp_type=4,
+            label=1,
+            has_default_value=False,
+            default_value=0,
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[
+        _REPLY_ERROR,
+    ],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=344,
+    serialized_end=611,
 )
 
 
 _SUBSCRIBE = _descriptor.Descriptor(
-  name='Subscribe',
-  full_name='cellaserv.Subscribe',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='event', full_name='cellaserv.Subscribe.event', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=613,
-  serialized_end=639,
+    name="Subscribe",
+    full_name="cellaserv.Subscribe",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="event",
+            full_name="cellaserv.Subscribe.event",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=613,
+    serialized_end=639,
 )
 
 
 _PUBLISH = _descriptor.Descriptor(
-  name='Publish',
-  full_name='cellaserv.Publish',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='event', full_name='cellaserv.Publish.event', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='cellaserv.Publish.data', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=641,
-  serialized_end=679,
+    name="Publish",
+    full_name="cellaserv.Publish",
+    filename=None,
+    file=DESCRIPTOR,
+    containing_type=None,
+    create_key=_descriptor._internal_create_key,
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="event",
+            full_name="cellaserv.Publish.event",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+        _descriptor.FieldDescriptor(
+            name="data",
+            full_name="cellaserv.Publish.data",
+            index=1,
+            number=2,
+            type=12,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"",
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
+    extensions=[],
+    nested_types=[],
+    enum_types=[],
+    serialized_options=None,
+    is_extendable=False,
+    syntax="proto3",
+    extension_ranges=[],
+    oneofs=[],
+    serialized_start=641,
+    serialized_end=679,
 )
 
-_MESSAGE.fields_by_name['type'].enum_type = _MESSAGE_MESSAGETYPE
+_MESSAGE.fields_by_name["type"].enum_type = _MESSAGE_MESSAGETYPE
 _MESSAGE_MESSAGETYPE.containing_type = _MESSAGE
-_REPLY_ERROR.fields_by_name['type'].enum_type = _REPLY_ERROR_TYPE
+_REPLY_ERROR.fields_by_name["type"].enum_type = _REPLY_ERROR_TYPE
 _REPLY_ERROR.containing_type = _REPLY
 _REPLY_ERROR_TYPE.containing_type = _REPLY_ERROR
-_REPLY.fields_by_name['error'].message_type = _REPLY_ERROR
-DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
-DESCRIPTOR.message_types_by_name['Register'] = _REGISTER
-DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
-DESCRIPTOR.message_types_by_name['Reply'] = _REPLY
-DESCRIPTOR.message_types_by_name['Subscribe'] = _SUBSCRIBE
-DESCRIPTOR.message_types_by_name['Publish'] = _PUBLISH
+_REPLY.fields_by_name["error"].message_type = _REPLY_ERROR
+DESCRIPTOR.message_types_by_name["Message"] = _MESSAGE
+DESCRIPTOR.message_types_by_name["Register"] = _REGISTER
+DESCRIPTOR.message_types_by_name["Request"] = _REQUEST
+DESCRIPTOR.message_types_by_name["Reply"] = _REPLY
+DESCRIPTOR.message_types_by_name["Subscribe"] = _SUBSCRIBE
+DESCRIPTOR.message_types_by_name["Publish"] = _PUBLISH
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
-  'DESCRIPTOR' : _MESSAGE,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Message)
-  })
+Message = _reflection.GeneratedProtocolMessageType(
+    "Message",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _MESSAGE,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Message)
+    },
+)
 _sym_db.RegisterMessage(Message)
 
-Register = _reflection.GeneratedProtocolMessageType('Register', (_message.Message,), {
-  'DESCRIPTOR' : _REGISTER,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Register)
-  })
+Register = _reflection.GeneratedProtocolMessageType(
+    "Register",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _REGISTER,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Register)
+    },
+)
 _sym_db.RegisterMessage(Register)
 
-Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), {
-  'DESCRIPTOR' : _REQUEST,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Request)
-  })
+Request = _reflection.GeneratedProtocolMessageType(
+    "Request",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _REQUEST,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Request)
+    },
+)
 _sym_db.RegisterMessage(Request)
 
-Reply = _reflection.GeneratedProtocolMessageType('Reply', (_message.Message,), {
-
-  'Error' : _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), {
-    'DESCRIPTOR' : _REPLY_ERROR,
-    '__module__' : 'cellaserv_pb2'
-    # @@protoc_insertion_point(class_scope:cellaserv.Reply.Error)
-    })
-  ,
-  'DESCRIPTOR' : _REPLY,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Reply)
-  })
+Reply = _reflection.GeneratedProtocolMessageType(
+    "Reply",
+    (_message.Message,),
+    {
+        "Error": _reflection.GeneratedProtocolMessageType(
+            "Error",
+            (_message.Message,),
+            {
+                "DESCRIPTOR": _REPLY_ERROR,
+                "__module__": "cellaserv_pb2"
+                # @@protoc_insertion_point(class_scope:cellaserv.Reply.Error)
+            },
+        ),
+        "DESCRIPTOR": _REPLY,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Reply)
+    },
+)
 _sym_db.RegisterMessage(Reply)
 _sym_db.RegisterMessage(Reply.Error)
 
-Subscribe = _reflection.GeneratedProtocolMessageType('Subscribe', (_message.Message,), {
-  'DESCRIPTOR' : _SUBSCRIBE,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Subscribe)
-  })
+Subscribe = _reflection.GeneratedProtocolMessageType(
+    "Subscribe",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _SUBSCRIBE,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Subscribe)
+    },
+)
 _sym_db.RegisterMessage(Subscribe)
 
-Publish = _reflection.GeneratedProtocolMessageType('Publish', (_message.Message,), {
-  'DESCRIPTOR' : _PUBLISH,
-  '__module__' : 'cellaserv_pb2'
-  # @@protoc_insertion_point(class_scope:cellaserv.Publish)
-  })
+Publish = _reflection.GeneratedProtocolMessageType(
+    "Publish",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _PUBLISH,
+        "__module__": "cellaserv_pb2"
+        # @@protoc_insertion_point(class_scope:cellaserv.Publish)
+    },
+)
 _sym_db.RegisterMessage(Publish)
 
 
